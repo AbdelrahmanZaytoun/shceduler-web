@@ -1,10 +1,12 @@
-import React, { useReducer, useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import axios from "axios";
 import reducer, {
   SET_DAY,
   SET_APPLICATION_DATA,
   SET_INTERVIEW,
 } from "reducers/application";
+
+axios.defaults.baseURL = process.env.REACT_APP_URL || "http://localhost:3001";
 
 export default function useApplicationData() {
   const [state, dispatch] = useReducer(reducer, {
