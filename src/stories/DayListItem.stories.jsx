@@ -15,7 +15,7 @@ export default {
   },
 };
 
-const Template = (args) => <DayListItem {...args} />;
+const Template = (args) => <DayListItem setDay={action("setDay")} {...args} />;
 
 export const Unselected = Template.bind({});
 Unselected.args = { name: "Monday", spots: 5 };
@@ -24,4 +24,4 @@ Selected.args = { name: "Monday", spots: 5 };
 export const Full = Template.bind({});
 Full.args = { name: "Monday", spots: 0 };
 export const Clickable = Template.bind({});
-Clickable.args = { name: "Tuesday", spots: 5, setDay: action("setDay") };
+Clickable.args = { name: "Tuesday", spots: 5 };
